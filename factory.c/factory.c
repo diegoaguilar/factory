@@ -16,7 +16,10 @@ int detector(int x, int y, int width, int height, int thresholdValue);
 
 int main(int argc, char const *argv[])
 {
-
+  wiringPiSetup();
+  pinMode(21,OUTPUT);
+  pinMode(20,OUTPUT);
+  digitalWrite(20,LOW); digitalWrite(21,LOW);
   int DELAY_FOR_PIC = atoi(argv[1]);
   int DELAY_FOR_ROBOT = atoi(argv[2]);
   int x = atoi(argv[3]);
@@ -25,10 +28,7 @@ int main(int argc, char const *argv[])
   int height = atoi(argv [6]);
   int thresholdValue = atoi(argv[7]);
 
-  wiringPiSetup();
-  pinMode(21,OUTPUT);
-  pinMode(20,OUTPUT);
-  pinMode(26,INPUT);
+
 
   int nonstop = 1;
 
