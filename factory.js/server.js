@@ -4,21 +4,21 @@ var path = '/tmp/echo.sock';
 fs.unlink(path, function () {
   var server = net.createServer(function(c) {
     console.log('server connected');
-    c.on('end', function() {
+
+  });
+
+
+    server.on('end', function() {
       console.log('server disconnected');
     });
 
-    c.on('data', function (data) {
+    server.on('data', function (data) {
         console.log(data);
     });
 
-    c.on('error', function (err) {
+    server.on('error', function (err) {
         console.log(err);
     });
-    c.write('hello\r\n');
-    c.pipe(c);
-  });
-  server.listen(path, function() {
-    console.log('server bound on %s', path);
-  });
+    server.write('hello\r\n');
+    server.pipe(c);
 });
