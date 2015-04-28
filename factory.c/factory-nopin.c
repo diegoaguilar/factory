@@ -16,6 +16,11 @@ int detector(int x, int y, int width, int height, int thresholdValue);
 
 int main(int argc, char const *argv[])
 {
+
+  CvCapture* capture = cvCaptureFromCAM(0);
+  cvSetCaptureProperty(capture,CV_CAP_PROP_FRAME_WIDTH,640);
+  cvSetCaptureProperty(capture,CV_CAP_PROP_FRAME_HEIGHT,480);
+
   wiringPiSetup();
   pinMode(21,OUTPUT);
   pinMode(20,OUTPUT);
@@ -37,7 +42,7 @@ int main(int argc, char const *argv[])
 
     //int resultado = detector(100, 80, 150, 150,140);
     //digitalWrite(20,LOW); //digitalWrite(21,LOW);
-    int resultado = detector(x,y,width,height,thresholdValue);
+    int resultado = detector(x,y,width,height,thresholdValue,capture);
     printf("%d\n", resultado);
 
     if (resultado == LATA) {
@@ -59,16 +64,12 @@ int main(int argc, char const *argv[])
   return 0;
 }
 
-int detector(int x, int y, int width, int height, int thresholdValue) {
+int detector(int x, int y, int width, int height, int thresholdValue,capture) {
 
   Mat img;
   Rect r;
   vector<Mat> channels;
   r = Rect(x,y,width,height);
-
-  CvCapture* capture = cvCaptureFromCAM(0);
-  cvSetCaptureProperty(capture,CV_CAP_PROP_FRAME_WIDTH,640);
-  cvSetCaptureProperty(capture,CV_CAP_PROP_FRAME_HEIGHT,480);
 
   if ( !capture ) {
         fprintf( stderr, "ERROR: capture is NULL \n" );
