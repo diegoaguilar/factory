@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "opencv.h"
 
-int int main(int argc, char const *argv[])
+int main(int argc, char const *argv[])
 {
 
 /*  int DELAY_FOR_PIC = atoi(argv[1]);
