@@ -33,6 +33,8 @@ int main(int argc, char const *argv[])
   int nonstop = 1;
 
   do {
+    digitalWrite(20,LOW);
+    digitalWrite(21,HIGH);
     delay(DELAY_FOR_PIC);
 
     //int resultado = detector(100, 80, 150, 150,140);
@@ -41,7 +43,7 @@ int main(int argc, char const *argv[])
 
     if (resultado == LATA) {
       digitalWrite(20,HIGH);
-      digitalWrite(21,HIGH);
+      digitalWrite(21,LOW);
     }
 
     else {
@@ -49,7 +51,9 @@ int main(int argc, char const *argv[])
       digitalWrite(21,HIGH);
     }
 
-    delay(DELAY_FOR_ROBOT;
+    delay(DELAY_FOR_ROBOT);
+    digitalWrite(20,LOW);
+    digitalWrite(21,LOW);
   }
   while(nonstop);
 
