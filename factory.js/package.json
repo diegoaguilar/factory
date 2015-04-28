@@ -1,0 +1,16 @@
+{
+  "name": "factory.js",
+  "version": "1.0.0",
+  "description": "Control de microcontrolador por I2C y comunicación interprocesos por UNIX domain sockets",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Benjamín Aguilar Aguilar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3",
+    "rasp2c": "0.0.3",
+    "socket.io": "^1.3.5"
+  }
+}
