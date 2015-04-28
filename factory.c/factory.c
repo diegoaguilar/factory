@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 {
 
 /*  int DELAY_FOR_PIC = atoi(argv[1]);
-  int DELAY_FOR_ROBOT = atoi(argv[2]);
+  int DELAY_FOR_ROBOT = atoi(argv[2]);./
   int x = atoi(argv[3]);
   int y = atoi(argv[4]);
   int width = atoi(argv[5]);
