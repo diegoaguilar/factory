@@ -42,7 +42,7 @@ int main(int argc, char const *argv[])
 
     //int resultado = detector(100, 80, 150, 150,140);
     //digitalWrite(20,LOW); //digitalWrite(21,LOW);
-    int resultado = detector(x,y,width,height,thresholdValue,capture);
+    int resultado = detector(x,y,width,height,thresholdValue, CvCapture* capture);
     printf("%d\n", resultado);
 
     if (resultado == LATA) {
