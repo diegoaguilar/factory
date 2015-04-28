@@ -12,7 +12,7 @@
 using namespace cv;
 using namespace std;
 
-int detector(int x, int y, int width, int height, int thresholdValue);
+int detector(int x, int y, int width, int height, int thresholdValue, CvCapture* capture);
 
 int main(int argc, char const *argv[])
 {
