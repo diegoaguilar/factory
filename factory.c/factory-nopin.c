@@ -42,7 +42,7 @@ int main(int argc, char const *argv[])
 
     //int resultado = detector(100, 80, 150, 150,140);
     //digitalWrite(20,LOW); //digitalWrite(21,LOW);
-    int resultado = detector(x,y,width,height,thresholdValue, CvCapture* capture);
+    int resultado = detector(x,y,width,height,thresholdValue, capture);
     printf("%d\n", resultado);
 
     if (resultado == LATA) {
@@ -64,7 +64,7 @@ int main(int argc, char const *argv[])
   return 0;
 }
 
-int detector(int x, int y, int width, int height, int thresholdValue,capture) {
+int detector(int x, int y, int width, int height, int thresholdValue, CvCapture* capture) {
 
   Mat img;
   Rect r;
