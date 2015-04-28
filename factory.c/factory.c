@@ -36,22 +36,26 @@ int main(int argc, char const *argv[])
   do {
     digitalWrite(20,HIGH);
     digitalWrite(21,LOW);
+    printf("%s\n", "Encendiendo banda");
     delay(DELAY_FOR_PIC);
     //int resultado = detector(100, 80, 150, 150,140);
+    printf("%s\n", "Apagar TODO");
     digitalWrite(20,HIGH); digitalWrite(21,HIGH);
     int resultado = detector(x,y,width,height,thresholdValue, capture);
-    printf("%d\n", resultado);
 
     if (resultado == LATA) {
+      printf("%s\n", "LATA");
       digitalWrite(20,LOW);
       digitalWrite(21,HIGH);
     }
 
     else {
+      printf("%s\n", "LA BOTELLA");
       digitalWrite(20,LOW);
       digitalWrite(21,LOW);
     }
 
+    printf("%s\n", "Brazo, muévete");
     delay(DELAY_FOR_ROBOT);
     digitalWrite(20,HIGH);
     digitalWrite(21,HIGH);
