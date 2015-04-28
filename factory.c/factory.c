@@ -17,22 +17,39 @@ int detector(int x, int y, int width, int height, int thresholdValue);
 int main(int argc, char const *argv[])
 {
 
-/*  int DELAY_FOR_PIC = atoi(argv[1]);
-  int DELAY_FOR_ROBOT = atoi(argv[2]);./
+  int DELAY_FOR_PIC = atoi(argv[1]);
+  int DELAY_FOR_ROBOT = atoi(argv[2]);
   int x = atoi(argv[3]);
   int y = atoi(argv[4]);
   int width = atoi(argv[5]);
   int height = atoi(argv [6]);
-  int threshold = atoi(argv[7]);*/
+  int thresholdValue = atoi(argv[7]);
 
   wiringPiSetup();
   pinMode(21,OUTPUT);
   pinMode(20,OUTPUT);
   pinMode(26,INPUT);
 
-  int resultado = detector(100, 80, 150, 150,140);
+  int nonstop = 1;
 
-  printf("%d\n", resultado);
+  do {
+    delay(DELAY_FOR_PIC);
+
+    //int resultado = detector(100, 80, 150, 150,140);
+    int resultado = detector(x,y,width,height,thresholdValue);
+    printf("%d\n", resultado);
+
+    if (resultado == LATA) {
+      // cambio de valores a pines
+    }
+
+    else {
+      // cambio de valores a pines
+    }
+
+    delay(DELAY_FOR_ROBOT;
+  }
+  while(nonstop);
 
   return 0;
 }
