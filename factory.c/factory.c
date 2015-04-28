@@ -40,11 +40,13 @@ int main(int argc, char const *argv[])
     printf("%d\n", resultado);
 
     if (resultado == LATA) {
-      // cambio de valores a pines
+      digitalWrite(20,HIGH);
+      digitalWrite(21,HIGH);
     }
 
     else {
-      // cambio de valores a pines
+      digitalWrite(20,HIGH);
+      digitalWrite(21,HIGH);
     }
 
     delay(DELAY_FOR_ROBOT;
