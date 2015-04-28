@@ -22,8 +22,7 @@ int main(int argc, char const *argv[])
   wiringPiSetupGpio();
   pinMode(21,OUTPUT);
   pinMode(20,OUTPUT);
-
-  digitalWrite(20,LOW); digitalWrite(21,LOW);
+  digitalWrite(20,LOW); digitalWrite(21,HIGH);
   int DELAY_FOR_PIC = atoi(argv[1]);
   int DELAY_FOR_ROBOT = atoi(argv[2]);
   int x = atoi(argv[3]);
@@ -36,27 +35,27 @@ int main(int argc, char const *argv[])
 
   do {
     digitalWrite(20,LOW);
-    digitalWrite(21,HIGH);
+    digitalWrite(21,LOW);
     delay(DELAY_FOR_PIC);
 
     //int resultado = detector(100, 80, 150, 150,140);
-    digitalWrite(20,LOW); digitalWrite(21,LOW);
+    digitalWrite(20,LOW); digitalWrite(21,HIGH);
     int resultado = detector(x,y,width,height,thresholdValue, capture);
     printf("%d\n", resultado);
 
     if (resultado == LATA) {
       digitalWrite(20,HIGH);
-      digitalWrite(21,LOW);
+      digitalWrite(21,HIGH);
     }
 
     else {
       digitalWrite(20,HIGH);
-      digitalWrite(21,HIGH);
+      digitalWrite(21,LOW);
     }
 
     delay(DELAY_FOR_ROBOT);
     digitalWrite(20,LOW);
-    digitalWrite(21,LOW);
+    digitalWrite(21,HIGH);
   }
   while(nonstop);
 
