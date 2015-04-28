@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
   CvCapture* capture = cvCaptureFromCAM(0);
   cvSetCaptureProperty(capture,CV_CAP_PROP_FRAME_WIDTH,640);
   cvSetCaptureProperty(capture,CV_CAP_PROP_FRAME_HEIGHT,480);
-  wiringPiSetup();
+  wiringPiSetupGpio();
   pinMode(21,OUTPUT);
   pinMode(20,OUTPUT);
 
